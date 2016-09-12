@@ -1,0 +1,5 @@
+Scenario : Pay tuition to NEU
+
+Description : A student wants to pay his tuition through myNEU account.
+
+Objects (with Behaviors and State):
