@@ -1,0 +1,89 @@
+Description : A consumer is going to order a delivery through phone calls
+
+Objects (with Behaviors and State):
+	Object : Consumer
+	    Status : name,  address, phone number of consumer, grocery needed
+	    Behavior : 	makePhoneCall(), buyGrocery(), askForDelivery(), confirmOrder(), payMoneyToStore()
+
+	Object : GroceryStore
+	    Status :  name, address, collection of grocery，name,phone number of grocery store
+	    Behavior : 	receivePhoneCall(), acceptMoneyPaidByConsumer(), shipTheGrocery()	    
+	    
+	Object : Order
+	    Status : order number, number of items, total price, weight, shipping address
+	
+	Object : PhoneNumber
+	    Status : phoneNumber of consumer; phoneNumber of grocery store
+	    Behavior : getPhoneNumber()	    
+	    
+	class Consumer{
+		String name;
+		String address;
+		String[] groceryNeeded;
+		int consumerPhoneNo;
+		
+		PhoneNumber getPhoneNumber(GroceryStore storePhoneNo){};
+		void makePhoneCall(GroceryStore storePhoneNo){};
+		void buyGrocery(String[], groceryNeeded){};
+		void askForDelivery(String, address){};
+		Order confirmOrder(){};
+		void payMoneyToStore(GroceryStore gs);
+	}	    
+	    
+	class GroceryStore{
+		String name;
+		String address;
+		String[] storeGrocery;
+		int storePhoneNo;
+		
+		void receivePhoneCall(){};
+		PhoneNumber getPhoneNumber(Consumer consumerPhoneNo){};
+		void acceptMoneyPaidByConsumer(){};
+		void shipTheGrocery(){};
+	}	  	    
+	    
+	class Order{
+	    int orderNumber;
+	    int numberOfItems;
+	    float totalPrice;
+	    float weight;
+	    float shippingAddress;
+	}	  	    
+	    
+	class PhoneNumber{
+		GroceryStorestorePhoneNo;
+		Consumer consumerPhoneNo;
+		
+		void getPhoneNumber(){};
+	}	  	    
+	    
+	class OrderForDelivery{
+		public static void main(String[] args){
+			Consumer serena = new Consumer();
+			GroceryStore qfc = new GroceryStore();
+			Oder orderOfMonday = new Order();
+			
+			serena.makePhoneCall(qfc.storePhoneNo());
+			qfc.receivePhoneCall();
+			serena.buyGrocery(String[], groceryNeeded);
+			serena.askForDelivery(serena.address());
+			serena.confirmOrder();
+			serena.payMoneyToStore();
+			qfc.acceptMoneyPaidByConsumer();
+			qfc.shipTheGrocery();
+		}
+	}	  	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    

@@ -1,0 +1,154 @@
+Scenario : Travelling to LA 
+
+Description :  A tourist is trying to find the cheapest flight to LA
+
+Objects (with Behaviors and State):
+	Object : Tourist	
+		State : name, web account, number of companion, departureAirport, destinationAirport, departure date, cabin,stop during flight
+		Behavior : visitWebsite(), setCriterions(), compareSpendofFlight(), placeAnOrder(), paytheOrder(), getConfirmationLetter()
+	
+   Object : TravellingWebsite
+	    State : collection of Airlines, collection of Flights
+	    Behavior : displayFlightInformaiton(), acceptMoneyFromTourist(), confirmOrderwithTourist()
+	    
+	Object : Airlines
+	    State ：name
+	    
+    Object : Account
+        State : Account Number
+        
+	Object : Flight
+	    State : Flight Number, departure airport, arrival airport, cabin type, stop during flight
+	   
+	Object : Airport
+	    State : departureAirport, destinationAirport, stopAirport,
+	    	   
+	Object : Date
+	    State : departure date, arrival date
+	    
+	Object : Cabin
+	    State : type of cabin(economy, premium economy, business, first)
+	 
+	Object : StopDuringFlight
+	    State : number of stop, airport of stop, stop-over time
+	
+	Object : Criterion
+	    State : departure airport, arrival airport, departure date, cabin, stop during flight, 
+	   
+	Object : Money
+	    State :	price of flight, tax&fees, total amount of money spend
+	     
+	Object : Order
+	    State :	 Serial number of Order, tourist, departure airport, arrival airport, total money of the order
+	
+	 Class Tourist{
+	     String name;
+	     Account touristAccount;
+	     int numberOfCompanion;
+	     Airport departureAirport;
+	     Airport destinationAirport;
+	     Date departureDate;
+	     Cabin typeofCabin;
+	     StopDuringFlight stopDuringFlight;
+	     void visitWebsite(TravellingWebsite tw){};
+	     void setCriterions(Criterion criterion){};
+	     void compareSpendofFlight(Money priceOfFlight, Money tax&fees){};
+	     Order placeAnOrder(Flight flightNumber){};
+	     Order paytheOrder(Order orderNumber){};
+	     void  getConfirmationLetter(Order orderNumber){};
+	 }   
+     Class TravellingWebsite{
+         String travellingWebsite;
+	     Airline[] airline;
+	     Account  touristAccount;
+	     Flight[] flight;
+	     Airport[] departureAirport;
+	     Airport[] arrivalAirport;
+	     Airport[] stopAirport;
+	     Flight displayFlightInformation(Flight flightNumber){};
+	     Money acceptMoneyFromTourist(Money totalAmount){};
+	     Order confirmOrderwithTourist(Order orderNumber){};
+	  }
+
+	 Class Airline{
+	     String airline;
+	 }
+	    
+	 Class Account{
+	     Account touristAccount;
+	 } 	 
+
+	 Class Flight{
+	     int numberOfFlight;
+	     Airport[] departureAirport;
+	     Airport[] arrivalAirport;
+	     Cabin typeOfCabin;
+	     StopDuringFlight stopduringflight;
+	 }  
+
+	 Class Airport{
+	     Str[] departureAirport;
+	     Str[] arrivalAirport;
+	     Str[] stopAirport;
+	 } 
+	 
+	 Class Date{
+	     ?date departureDate;
+	 } 
+	   	   	  
+	 
+	 Class Cabin{
+	     Str[] cabin;
+	 }	 
+	 
+	 Class StopDuringFlight{
+	     Str[] stopAirport;
+	     int numberOfStop;
+	     float stopOverTime;
+	 }   
+
+	 Class Criterion{
+	     Airport[] departureAirport;
+	     Airport[] arrivalAirport;
+	     Airport[] stopAirport;
+	     Date departureDate;
+	     Cabin cabin;
+	     StopDuringFlight stopduringflight; 
+	 } 
+	 	 
+	 Class Money{
+	    float priceOfFlight;
+	    float taxAndFees;
+	    float totalAmount;
+	 }   	 
+	 
+	 Class Order{
+	     int orderNumber;
+	     Tourist name;
+	     Airport[] departureAirport;
+	     Airport[] arrivalAirport;
+	     Airport[] stopAirport;
+	     Money totalAmount;
+	 }   	 
+}
+	 Class TravellingToLA{
+	     public static void main(String args[]){
+	     TravellingWebsite tw = new TravellingWebsite();
+	     Criterion criterion = new Criterion();
+	     Flight flight = new Flight();
+	     Money money = new Money();
+	     Order order = new Order();
+	     Tourist serena = new Tourist();
+	     serena.name = "Serena";
+	     serena.visitWebsite(tw);
+	     serena.setCriterions(criterion);
+	     tw.displayFlightInformation(flight);
+	     serena.compareSpendofFlight(money);
+	     serena.placeAnOrder(flight);
+	     serena.paytheOrder(order);
+	     serena.getConfirmationLetter(order);
+	     } 
+	 }   	 
+	 
+	 	 	  
+	    

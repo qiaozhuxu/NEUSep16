@@ -1,0 +1,132 @@
+Scenario : Booking an room on Airbnb
+
+Description : A tourist wants to book a house on Airbnb app.
+
+Objects (with Behaviors and State):
+	Object : Tourist	
+		State : name, AirbnbWebsite tourist account, criterions for booking
+		Behavior : visitWebsite(),setCriterions(), findHouse(), submitReservationRequest(), payMoneyToAirbnb(), getRequestResult()
+	
+	Object : Criterion
+		State : destination city, stay period, number of companions, house type
+		
+	Object : Host
+	     State : name, AirbnbWebsite host account, detailed address of house
+	     Behavior : giveResultOfRequest(), receivePaymentConfirmationfromAirbnb()
+
+	Object : House
+		State : house number, type of house, availability, price per day, city
+		 
+	Object : AirbnbWebsite
+		State : collection of homes, collection of hosts, collection of tourist
+		Behavior : displayHouses(), receiveReservationRequest(), receiveReservationConfirmation(), acceptMoneyFromTourist(),sendHostPaymentConfirmation()
+		
+	Object : Money
+		State : total amount, price per day
+
+	Object : ReservationRequest
+		State :  house number, stay period, number of companions, total amount of money, result of request
+		
+    Object : Reservation
+		State: stay period, money
+
+    Object : Address
+		State : destination city of tourist, detailed address of house
+
+    Object : StayPeriod
+		State : house available period, tourist stay period
+
+	class Tourist{
+	    String name;
+		Account touristAccount;
+		
+		void visitWebsite(AirbnbWebsite Airbnb){};
+		House findHouse(Criterion touristCriterion){};
+		void submitReservationRequest(){};
+		void getRequestResult(ReservationRequest requestNumber){};
+		Money payMoneyToAirbnb()(AirbnbWebsite Airbnb){};
+	}
+
+	class Criterion{
+		Address destinationCity;
+		StayPeriod touristStayPeriod;
+		int numberOfCompanions;
+		String[] houseType;
+		Money pricePerDay;
+	}
+	
+    class Host{
+	    String name;
+	    Account hostAccount;
+	    Address detailedAddressOfHouse;
+	    StayPeriod houseAvailablePeriod;
+	    
+	    ReservationRequest giveResultOfRequest(ReservationRequest requestNumber){};
+	    void receivePaymentConfirmationfromAirbnb(ReservationRequest requestNumber){};
+    }
+
+    class House{
+	    Type typeOfHouse;
+	    Int houseNumber;
+	    StayPeriod houseAvailablePeriod;
+	    Money pricePerDay;
+	    Money totalAmount;
+	    Address detailedAddressOfHouse;
+	    Picture picturesOfHouse;
+    }
+		
+    class AirbnbWebsite{
+    	Host[] hosts;
+    	Tourist[] tourists;
+	    House[] houses;
+	    Address destinationCities;
+	   
+	    void displayHouses(Address destinationCities){};
+		void receiveReservationRequest(ReservationRequest requestNumber){};
+		ReservationRequest displayRequestResult(ReservationRequest requestNumber){};
+    }
+
+    class Money{
+	    float totalAmount;
+	    float pricePerDay;
+    }
+
+    class ReservationRequest{
+	    int requestNumber;
+	    House houseNumber;
+	    Money pricePerDay;
+	    Money totalAmount;
+	    StayPeriod touristStayPeriod;
+	    Criterion numberOfCompanions;
+	    String requestResult;
+    }
+    
+
+    class Address{
+	    String destinationCities;
+	    String detailedAddressOfHouse; 
+	}
+
+    class StayPeriod{
+	    date houseAvailablePeriod;
+	    date touristStayPeriod;
+    }
+    
+    class BookingAnAirbnb{
+        public static void main(String[] args){
+        	Tourist serena = new Tourist();
+        	Host max = new Host();
+        	ReservationRequest request= new ReservationRequest();
+        	
+        	serena.visitWebsite(AirbnbWebsite Airbnb);
+			serena.findHouse(Criterion touristCriterion);
+			serena.submitReservationRequest();
+			max.giveResultOfRequest(request.(requestNumber))
+		 	serena.getRequestResult(request.(requestNumber));
+			serena.payMoneyToAirbnb()(AirbnbWebsite Airbnb);
+			max.receivePaymentConfirmationfromAirbnb(request.(requestNumber));
+     
+        }
+    }
+
+		
