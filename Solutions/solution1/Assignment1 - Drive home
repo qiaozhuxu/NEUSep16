@@ -1,0 +1,90 @@
+Description : A student is driving home from school.
+
+Objects (with Behaviors and State): 
+	Object : Student
+	    Status : name, driver license Number 
+	    Behavior : driveCar, chooseRoute, arriveHome
+
+    Object :Car 
+        Status : plate, model of car 
+	    
+    Object :Route 
+        Status : RouteNumber, type of route, milieage to drive home
+    
+    Object : TimeLength
+        Status : length to get home
+     
+    Object : Traffic
+        Status : condition
+    	
+        
+    Class Student{
+        String name;
+        String driverLicenseNo;
+        void driveCar(){};
+        void chooseRoute(){};
+        void arriveHome(){};
+    }  
+    
+    Class Car{
+        String plate;
+        String carModel;
+    }
+	
+	Class Route{
+	    int routeNumber;
+	    Str[] routetype;
+	    float milieage;
+	}
+	
+	Class Traffic{
+	    boolean trafficCondition;
+	}
+	 Class TimeLength{
+	     date travelTime;
+	 }   
+	    
+	 Class DriveHome{
+	     public static void main(String[] args){
+	         Student student = new Student();
+             Route route = new Route();
+	         student.driveCar(Car plate);
+	         student.chooseRoute(route, Traffic trafficCondition);
+	     }
+	 }   
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+      
