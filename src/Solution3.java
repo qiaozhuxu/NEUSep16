@@ -2,29 +2,29 @@ import java.util.*;
 
 public class Solution3 {
 	public static void main(String args[]){
-//		Solution3 test1 = new Solution3();
-//		String test1result = Arrays.toString(test1.findPowerOfThree(-1));
-//		System.out.println(test1result);
-//		
-//		Solution3 test2 = new Solution3();
-//		System.out.println(test2.countDigits(-1));
-//		
-//		Solution3 test3 = new Solution3();
-//		test3.printNumbers(10);
+		Solution3 test1 = new Solution3();
+		String test1result = Arrays.toString(test1.findPowerOfThree(-1));
+		System.out.println(test1result);
 		
-//		Solution3 test5 = new Solution3();
-//		System.out.println(test5.reverseVowels("hello"));
+		Solution3 test2 = new Solution3();
+		System.out.println(test2.countDigits(-1));
 		
-//		Solution3 test6 = new Solution3();
-//		System.out.println(test6.lengthOfLastWord("A lot of meinv"));
-//
-//		
-//		Solution3 test7 = new Solution3();
-//		String test7result = String.valueOf(test7.isVowel('y'));
-//		System.out.println(test7result);
+		Solution3 test3 = new Solution3();
+		test3.printNumbers(10);
 		
-//		Solution3 test8 = new Solution3();
-//		System.out.println(test8.reverseString2("I like soccer"));
+		Solution3 test5 = new Solution3();
+		System.out.println(test5.reverseVowels("hello"));
+		
+		Solution3 test6 = new Solution3();
+		System.out.println(test6.lengthOfLastWord("A lot of meinv"));
+
+		
+		Solution3 test7 = new Solution3();
+		String test7result = String.valueOf(test7.isVowel('y'));
+		System.out.println(test7result);
+		
+		Solution3 test8 = new Solution3();
+		System.out.println(test8.reverseString2("I like soccer"));
 		
 		Solution3 bonus = new Solution3();
 		System.out.println(bonus.checkMessage("SOSSUSSOP"));
@@ -48,7 +48,6 @@ public class Solution3 {
 	}
 //end of Question1 Solution	
 	
-	
 	/**Q2
 	 * Given a integer 'n', return n%count, count is the number of digits of n
 	 * For example, n = 100, return 1
@@ -60,7 +59,6 @@ public class Solution3 {
 		return result;
 	}
 //end of Question2 Solution
-	
 	
 	/**Q3
 	 * Given a integer 'n', if n is odd, print n odd numbers, if n is even,
@@ -222,21 +220,3 @@ public class Solution3 {
 		return count;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
