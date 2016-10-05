@@ -101,7 +101,7 @@ public class Solution3 {
 	 */
 	public int[][] generatePascalsTriangle(int n) {
 		int[][] triangle = new int[n][];
-		for(int row = 0; row <= n; row++){
+		for(int row = 0; row < n; row++){
 			triangle[row] = new int[row + 1];
 			triangle[row][0] = 1;
 			triangle[row][row] = 1;
