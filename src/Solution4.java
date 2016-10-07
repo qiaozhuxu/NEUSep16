@@ -70,11 +70,12 @@ public class Solution4 {
 		private int modelYear;
 		
 		public Car(String model, String brand, double msrp, int modelYear){
-			this.model = "CAMRY";
-			this.brand = "TOYOTA";
-			this.msrp = 20000.00;
-			this.modelYear = 2016;
+			this.model = model;
+			this.brand = brand;
+			this.msrp = msrp;
+			this.modelYear = modelYear;
 		}
+		
 		public Car(){
 			this("CAMRY", "TOYOTA", 20000.00, 2016);
 		}
@@ -101,7 +102,11 @@ public class Solution4 {
 	/**5. Combine with problem 3 and 4, define a class named Driver that 
 	 * contains methods like drive and addGas so that the driver can drive the car.**/
 	class Driver{
-		private String driverName = "Serena";
+		private String driverName;
+		
+		public Driver(String driverName){
+			this.driverName = driverName;
+		}
 		
 		public String getDriverName(){
 			return this.driverName;
@@ -109,10 +114,10 @@ public class Solution4 {
 		Car car = new Car();
 		GasTank gasTank = new GasTank();
 		public void driveCar(String name){
-			System.out.println("Driver " + this.driverName);
-			System.out.println("the car's brand is" + car.getBrand());
-			System.out.println("the car used to has " +gasTank.getGasLevel() +" gal of fuel");
-			System.out.println("She added 18 gal of fuel and now the car has"+ gasTank.addGas(18)+"gal of fuel");
+			System.out.println("Driver is " + this.driverName);
+			System.out.println("the car's brand is " + car.getBrand());
+			System.out.println("the car used to has " +gasTank.getGasLevel() +" gallon of fuel");
+			System.out.println("She added 18 gal of fuel and now the car has "+ gasTank.addGas(18)+" gallon of fuel");
 		}
 	}
 	
